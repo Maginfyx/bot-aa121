@@ -21,6 +21,6 @@ async def on_message(message):
 
 @client.event
 async def on_ready():
-    await client.change_presence(game=discord.Game(name="Currently in maintenance."))
+    await client.change_presence(game=discord.Game(name="Accepting and handling orders!"))
 
 client.run("NDkxMjc5MTAyMDgzMzM0MTQ1.DoF1sw.NlRTZgjajCuXMshV-unbrF2La5w")
