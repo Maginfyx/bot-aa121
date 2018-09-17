@@ -25,5 +25,3 @@ async def on_ready():
     await client.change_presence(game=discord.Game(name="Handling sales!"))
 
 bot.run(os.environ['BOT_TOKEN'])
-
-client.run("NDkxMjc5MTAyMDgzMzM0MTQ1.DoFnUA.5QMJow6njym0oncsh_dJTDRFFDE")
