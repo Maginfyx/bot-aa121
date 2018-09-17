@@ -3,6 +3,8 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 
+api = str(os.environ.get('RIOT_KEY'))
+
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="?")
