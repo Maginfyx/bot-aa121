@@ -30,7 +30,7 @@ async def on_message(message):
     if message.content.upper().startswith('?WARNING'):
         if message.author.id == "268087923751124992":
             server = client.get_server("490938256683302912")
-            args = message.content.split("")
+            args = message.content.split("  ")
             embed=discord.Embed(title=":warning: Warning from Admin", description="Warning from an adminstator.", color=0x00ff00)
             embed.add_field(name="Warning Reason", value="%s" % (args[1]), inline=False)
             await client.send_message(server.get_channel("490942613269250048"), embed=embed)
