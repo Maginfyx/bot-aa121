@@ -26,13 +26,13 @@ async def on_message(message):
             args = message.content.split(" ")
             await client.send_message(server.get_channel("491676268853723138"), "@everyone %s" % (" ".join(args[1:])))
         else:
-            await client.send_message(message.channel, "You are not an admin")
+            await client.send_message(message.channel, "You do not meet the requirements to complete this action.")
     if message.content.upper().startswith('?WARNING'):
-        if message.author.id == "268087923751124992":
+        if "490942293944041484" in [role.id for role in message.author.roles]:
             server = client.get_server("490938256683302912")
-            args = message.content.split(" ")
+            args = message.content.split("")
             embed=discord.Embed(title=":warning: Warning from Admin", description="Warning from an adminstator.", color=0x00ff00)
-            embed.add_field(name="Warning Reason", value="%s @here" % (args[1:0]), inline=False)
+            embed.add_field(name="Warning Reason", value="%s" % (" ".join(args[1:])), inline=False)
             await client.send_message(server.get_channel("490942613269250048"), embed=embed)
         else:
             await client.send_message(message.channel, "You do not meet the requirements to complete this action.") 
