@@ -31,7 +31,7 @@ async def on_message(message):
         if "490942293944041484" in [role.id for role in message.author.roles]:
             server = client.get_server("490938256683302912")
             args = message.content.split(" ")
-            embed=discord.Embed(title=":warning: Warning from Admin", description="Warning from an adminstator.", color=0x00ff00)
+            embed=discord.Embed(title=":warning: Warning from Admin", description="Warning from an adminstator. @here", color=0x00ff00)
             embed.add_field(name="Warning Reason", value="%s" % (" ".join(args[1:])), inline=False)
             await client.send_message(server.get_channel("495707512436162560"), embed=embed)
             await client.send_message(message.channel, "Admins have received the warning.")
