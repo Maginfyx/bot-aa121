@@ -20,7 +20,7 @@ async def on_message(message):
         embed.add_field(name="Item", value="%s" % (args[2]), inline=False)
         embed.add_field(name="Quantity", value="%s" % (args[3]), inline=False)
         embed.add_field(name="User", value="<@%s>" % (userID), inline=False)
-        embed.add_field(name=":page_facing_up: Receipt ID", value=messageid, inline=False)
+        embed.add_field(name="Receipt ID", value=messageid, inline=False)
         msg = await client.send_message(message.channel, "Contacting services... 0% done")
         time.sleep(3)
         await client.edit_message(msg, "Contacting salesmen... 50% done")
