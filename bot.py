@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 import time
-
+roles = ["491676004004134912"]
 
 Client = discord.Client()
 client = commands.Bot(command_prefix="?")
@@ -22,9 +22,13 @@ async def on_message(message):
         embed.add_field(name="User", value="<@%s>" % (userID), inline=False)
         embed.add_field(name="Receipt ID", value=messageid, inline=False)
         msg = await client.send_message(message.channel, "Contacting services... 0% done")
-        time.sleep(3)
+        time.sleep(1)
+        await client.edit_message(msg, "Contacting services... 25% done")
+        time.sleep(2)
         await client.edit_message(msg, "Contacting salesmen... 50% done")
-        time.sleep(3)
+        time.sleep(1)
+        await client.edit_message(msg, "Contacting salesmen... 75% done")
+        time.sleep(1)
         await client.send_message(server.get_channel("490942613269250048"), embed=embed)
         await client.edit_message(msg, "Thank you for the purchase!")
     if message.content.upper().startswith('?ANNOUNCE'):
@@ -41,13 +45,15 @@ async def on_message(message):
             embed=discord.Embed(title=":warning: Warning from Admin", description="Warning from an adminstator.", color=0x00ff00)
             embed.add_field(name="Warning Reason", value="%s" % (" ".join(args[1:])), inline=False)
             await client.send_message(server.get_channel("495707512436162560"), embed=embed)
-            await client.send_message(message.channel, "User is warned")
+            await client.send_message(message.channel, "Admins have been warned.")
         else:
-            await client.send_message(message.channel, "You do not meet the requirements to complete this action.") 
+            await client.send_message(message.channel, "You do not meet the requirements to complete this action.")
 
 @client.event
 async def on_ready():
     await client.change_presence(game=discord.Game(name="Handling sales!"))
+  
+    
 
 
 
