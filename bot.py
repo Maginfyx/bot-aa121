@@ -55,4 +55,4 @@ async def on_ready():
     await client.change_presence(game=discord.Game(name="Handling sales!"))
   
     
-client.login(process.env.bottoken);
+bot.run(os.environ['bottoken'])
