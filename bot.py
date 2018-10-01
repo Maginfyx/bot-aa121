@@ -58,4 +58,4 @@ async def on_ready():
 
 
 
-bot.run(os.environ['BOT_TOKEN'])
+bot.run(BOT_TOKEN)
