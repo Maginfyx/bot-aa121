@@ -3,6 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 import time
+import os
 roles = ["491676004004134912"]
 
 Client = discord.Client()
