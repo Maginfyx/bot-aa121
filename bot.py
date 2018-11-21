@@ -11,21 +11,21 @@ client = commands.Bot(command_prefix="?")
 
 @client.event
 async def on_message(message):
-    if message.content.upper().startswith('?SALES'):
+    if message.content.upper().startswith('?REQUEST'):
         userID = message.author.id
-        server = client.get_server("490938256683302912")
+        server = client.get_server("514856941617414165")
         args = message.content.split(" ")
         messageid = message.id
         embed=discord.Embed(title=":shopping_cart: Item requested", description="Someone requested an item!", color=0x00ff00)
-        embed.add_field(name="Game", value="%s" % (args[1]), inline=False)
-        embed.add_field(name="Item", value="%s" % (args[2]), inline=False)
-        embed.add_field(name="Quantity", value="%s" % (args[3]), inline=False)
+        embed.add_field(name="Section", value="%s" % (args[1]), inline=False)
+        embed.add_field(name="Item Process", value="%s" % (args[2]), inline=False)
+        embed.add_field(name="Days to be done in (requested)", value="%s" % (args[3]), inline=False)
         embed.add_field(name="User", value="<@%s>" % (userID), inline=False)
         embed.add_field(name="Receipt ID", value=messageid, inline=False)
         msg = await client.send_message(message.channel, "Please wait.")
         time.sleep(1)
-        await client.send_message(server.get_channel("490942613269250048"), embed=embed)
-        await client.edit_message(msg, "Thank you for the purchase!")
+        await client.send_message(server.get_channel("514857459391791121"), embed=embed)
+        await client.edit_message(msg, "Request sent!")
     if message.content.upper().startswith('?ANNOUNCE'):
         if "490942293944041484" in [role.id for role in message.author.roles]:
             server = client.get_server("490938256683302912")
@@ -46,7 +46,7 @@ async def on_message(message):
 
 @client.event
 async def on_ready():
-    await client.change_presence(game=discord.Game(name="Handling sales!"))
+    await client.change_presence(game=discord.Game(name="Accepting requests!"))
   
     
 client.run(str(os.environ.get('bottoken')))
