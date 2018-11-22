@@ -19,7 +19,6 @@ async def on_message(message):
         embed=discord.Embed(title=":shopping_cart: Item requested", description="Someone requested an item!", color=0x00ff00)
         embed.add_field(name="Section", value="%s" % (args[1]), inline=False)
         embed.add_field(name="Item Process", value="%s" % (args[2]), inline=False)
-        embed.add_field(name="Days to be done in (requested)", value="%s" % (args[3]), inline=False)
         embed.add_field(name="User", value="<@%s>" % (userID), inline=False)
         embed.add_field(name="Receipt ID", value=messageid, inline=False)
         msg = await client.send_message(message.channel, "Please wait.")
