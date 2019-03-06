@@ -27,8 +27,8 @@ async def on_message(message):
         embed.add_field(name="Receipt ID", value=messageid, inline=False)
         msg = await client.send_message(message.channel, "Please wait.")
         time.sleep(1)
-        await client.send_message(server.get_channel("514856941617414167"), embed=embed)
-        await client.edit_message(msg, "Request sent!")
+        msg = await client.send_message(message.channel, embed=embed)
+        await client.edit_message(msg, "Here is the help!")
 
 
 @client.event
