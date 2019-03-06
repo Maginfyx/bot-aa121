@@ -7,44 +7,21 @@ import os
 roles = ["491676004004134912"]
 
 Client = discord.Client()
-client = commands.Bot(command_prefix="?")
+client = commands.Bot(command_prefix="pp!")
 
 @client.event
 async def on_message(message):
-    if message.content.upper().startswith('?REQUEST'):
+    if message.content.upper().startswith('pp!info')
         userID = message.author.id
-        server = client.get_server("514856941617414165")
+        await.client.send_message(message.channel, "<@%s> **Hello there! Welcome to Pizza People, JacktheG4m3r's fan discord server! To find more info, please go to the info channel in the channel category 'announcements and stuff'.**" % (userID))
+    if message.content.upper().startswith('pp!say'):
         args = message.content.split(" ")
-        messageid = message.id
-        embed=discord.Embed(title=":shopping_cart: Item requested", description="Someone requested an item!", color=0x00ff00)
-        embed.add_field(name="Section", value="%s" % (args[1]), inline=False)
-        embed.add_field(name="User", value="<@%s>" % (userID), inline=False)
-        embed.add_field(name="Receipt ID", value=messageid, inline=False)
-        msg = await client.send_message(message.channel, "Please wait.")
-        time.sleep(1)
-        await client.send_message(server.get_channel("514857459391791121"), embed=embed)
-        await client.edit_message(msg, "Request sent!")
-    if message.content.upper().startswith('?ANNOUNCE'):
-        if "490942293944041484" in [role.id for role in message.author.roles]:
-            server = client.get_server("490938256683302912")
-            args = message.content.split(" ")
-            await client.send_message(server.get_channel("491676268853723138"), "@everyone %s" % (" ".join(args[1:])))
-        else:
-            await client.send_message(message.channel, "You do not meet the requirements to complete this action.")
-    if message.content.upper().startswith('?WARNING'):
-        if "490942293944041484" in [role.id for role in message.author.roles]:
-            server = client.get_server("490938256683302912")
-            args = message.content.split(" ")
-            embed=discord.Embed(title=":warning: Warning from Admin", description="Warning from an adminstator.", color=0x00ff00)
-            embed.add_field(name="Warning Reason", value="%s" % (" ".join(args[1:])), inline=False)
-            await client.send_message(server.get_channel("495707512436162560"), embed=embed)
-            await client.send_message(message.channel, "Admins have been warned.")
-        else:
-            await client.send_message(message.channel, "You do not meet the requirements to complete this action.")
+        await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+
 
 @client.event
 async def on_ready():
-    await client.change_presence(game=discord.Game(name="Accepting requests!"))
+    await client.change_presence(game=discord.Game(name="Cooking Pizzas!"))
   
     
 client.run(str(os.environ.get('bottoken')))
