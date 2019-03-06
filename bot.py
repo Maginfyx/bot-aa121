@@ -25,7 +25,6 @@ async def on_message(message):
         embed=discord.Embed(title=":question: PPBot Help", description="You have requested help with the bot.", color=0x00ff00)
         embed.add_field(name="Testing", value="<@%s>" % (userID), inline=False)
         embed.add_field(name="Receipt ID", value=messageid, inline=False)
-        msg = await client.send_message(message.channel, "Please wait.")
         time.sleep(1)
         msg = await client.send_message(message.channel, embed=embed)
         await client.edit_message(msg, "Here is the help!")
