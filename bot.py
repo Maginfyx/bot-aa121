@@ -19,16 +19,16 @@ async def on_message(message):
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
     if message.content.upper().startswith('PP!HELP'):
         userID = message.author.id
-        await client.send_message(message.channel, "<@%s> This bot has multiple features. Check them out below!" % (userID))
-        await client.send_message(message.channel, "https://bit.ly/2Tlbp1Z")
-        await client.send_message(message.channel, "**This bot restarts very often for repairs, bug fixes and updates. The game status sometimes tells you when updates are incoming!**")
-        await client.send_message(message.channel, "https://bit.ly/2J570eC")
-        await client.send_message(message.channel, "**Pizza People is a Discord server owned by Jack (aka. JacktheG4m3r). It at first was made to be a friend server, but has grown to be his fan discord server. Pizza People is a friendly server, but remember to follow the rules!**")
-        await client.send_message(message.channel, "https://bit.ly/2Tlbp1Z")
-        await client.send_message(message.channel, "https://bit.ly/2Tlbp1Z")
+        await client.send_message(message.channel, "<@%s>**Bot Commands**" % (userID))
+        await client.send_message(message.channel, "help, say, info, subjack")
+    if message.content.upper().startswith('PP!SUBJACK'):
+        userID = message.author.id
+        await client.send_message(message.channel, "Subscribe to Jack here: https://bit.ly/2H4woiP")
+
 @client.event
 async def on_ready():
     await client.change_presence(game=discord.Game(name="Cooking Pizzas!"))
+    
    
       
   
