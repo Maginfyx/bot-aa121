@@ -20,6 +20,7 @@ async def on_message(message):
     if message.content.upper().startswith('PP!HELP'):
         userID = message.author.id
         await client.send_message(message.channel, "<@%s> https://cdn.discordapp.com/attachments/547896017828184067/552832679280902145/unknown.png" % (userID))
+        await client.send_message(message.channel, "<@%s> **This bot is used in Pizza People for several things. Here is what it does.**" % (userID))
 @client.event
 async def on_ready():
     await client.change_presence(game=discord.Game(name="Cooking Pizzas!"))
