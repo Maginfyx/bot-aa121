@@ -17,6 +17,18 @@ async def on_message(message):
     if message.content.upper().startswith('PP!SAY'):
         args = message.content.split(" ")
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
+    if message.content.upper().startswith('PP!HELP'):
+        userID = message.author.id
+        server = client.get_server("514856941617414165")
+        args = message.content.split(" ")
+        messageid = message.id
+        embed=discord.Embed(title=":question: PPBot Help", description="You have requested help with the bot.", color=0x00ff00)
+        embed.add_field(name="Testing", value="<@%s>" % (userID), inline=False)
+        embed.add_field(name="Receipt ID", value=messageid, inline=False)
+        msg = await client.send_message(message.channel, "Please wait.")
+        time.sleep(1)
+        await client.send_message(server.get_channel("514856941617414167"), embed=embed)
+        await client.edit_message(msg, "Request sent!")
 
 
 @client.event
