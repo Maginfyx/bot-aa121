@@ -19,7 +19,7 @@ async def on_message(message):
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
     if message.content.upper().startswith('PP!HELP'):
         userID = message.author.id
-        await client.send_message(message.channel, "<@%s>**Bot Commands**" % (userID))
+        await client.send_message(message.channel, "<@%s> **Bot Commands**" % (userID))
         await client.send_message(message.channel, "help, say, info, subjack")
     if message.content.upper().startswith('PP!SUBJACK'):
         userID = message.author.id
