@@ -19,7 +19,10 @@ async def on_message(message):
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
     if message.content.upper().startswith('PP!HELP'):
         userID = message.author.id
-        await client.send_message(message.channel, "<@%s> https://cdn.discordapp.com/attachments/547896017828184067/552832679280902145/unknown.png" % (userID))
+        await client.send_message(message.channel, "<@%s> This bot has multiple features. Check them out below!" % (userID))
+        await client.send_message(message.channel, "https://bit.ly/2Tlbp1Z" % (userID))
+        await client.send_message(message.channel, "<@%s> **This bot is used in Pizza People for several things. Here is what it does.**" % (userID))
+        await client.send_message(message.channel, "<@%s> **This bot is used in Pizza People for several things. Here is what it does.**" % (userID))
         await client.send_message(message.channel, "<@%s> **This bot is used in Pizza People for several things. Here is what it does.**" % (userID))
 @client.event
 async def on_ready():
