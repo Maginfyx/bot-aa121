@@ -13,7 +13,7 @@ client = commands.Bot(command_prefix="pp!")
 async def on_message(message):
     if message.content.startswith('pp!info'):
         userID = message.author.id
-        await client.send_message(message.channel, "*Hi there <@%s>! Welcome to Pizza People, JacktheG4m3r's fan discord server! To find more info, please go to the info channel in the channel category* **'announcements and stuff'**." % (userID))
+        await client.send_message(message.channel, "*Hi there <@%s>! Welcome to Pizza People, JacktheG4m3r's fan discord server! To find more info, please go to the info channel in the channel category* ***'announcements and stuff'***." % (userID))
     if message.content.startswith('pp!say'):
         args = message.content.split(" ")
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
