@@ -18,16 +18,17 @@ async def on_message(message):
         args = message.content.split(" ")
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
     if message.content.upper().startswith('PP!HELP'):
-        
-        embed=discord.Embed(title=":question: PPBot Help", description="You have requested help with the bot.", color=0x00ff00)
-        embed.add_field(name="<@%s> Bot Help", value="" % (userID), inline=False)
-        embed.add_field(name="<@%s> Bot Commands", value="info, help, say" % (userID), inline=False)
-        time.sleep(1)
-        await client.send_message(message.channel, embed=embed)
+        userID = message.author.id
+        await client.send_message(message.channel, "https://cdn.discordapp.com/attachments/547896017828184067/552832679280902145/unknown.png" % (userID))
+        await client.send_message(message.channel, "*This bot is used of alot of things. This will allow you to understand those.*")
 
 @client.event
 async def on_ready():
     await client.change_presence(game=discord.Game(name="Cooking Pizzas!"))
+    
+@client.event
+async def on_ready():
+      
   
     
 client.run(str(os.environ.get('bottoken')))
