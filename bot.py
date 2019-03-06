@@ -19,7 +19,6 @@ async def on_message(message):
         await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
     if message.content.upper().startswith('PP!HELP'):
         userID = message.author.id
-        server = client.get_server("514856941617414165")
         args = message.content.split(" ")
         messageid = message.id
         embed=discord.Embed(title=":question: PPBot Help", description="You have requested help with the bot.", color=0x00ff00)
