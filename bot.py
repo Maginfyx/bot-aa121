@@ -27,7 +27,6 @@ async def on_message(message):
         embed.add_field(name="<@%s> Bot Commands", value="info, help, say" % (userID), inline=False)
         time.sleep(1)
         msg = await client.send_message(message.channel, embed=embed)
-        await client.edit_message(msg, "Here is the help!")
 
 
 @client.event
