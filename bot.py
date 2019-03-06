@@ -20,7 +20,7 @@ async def on_message(message):
     if message.content.upper().startswith('PP!HELP'):
         userID = message.author.id
         await client.send_message(message.channel, "https://cdn.discordapp.com/attachments/547896017828184067/552832679280902145/unknown.png" % (userID))
-        await client.send_message(message.channel, "*This bot is used of alot of things. This will allow you to understand those.*")
+        await client.send_message(message.channel, "*This bot is used of alot of things. This will allow you to understand those.*" % (userID))
 
 @client.event
 async def on_ready():
