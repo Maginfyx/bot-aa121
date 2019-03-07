@@ -30,7 +30,9 @@ async def on_ready():
     await client.change_presence(game=discord.Game(name="Cooking Pizzas!"))
     
    
-      
+@client.event
+async def on_ready():
+    await client.send_message(server.get_channel("514861708230131722"), "Bot has been updated and restarted. If you find any bugs in this update, please message Magi#2011!
   
     
 client.run(str(os.environ.get('bottoken')))
