@@ -25,7 +25,7 @@ async def on_message(message):
         userID = message.author.id
         await client.send_message(message.channel, "Subscribe to Jack here: https://bit.ly/2H4woiP")
     if message.content.upper().startswith('PP!MEGAOOFSPAM'):
-        await bot.say(random.choice(["@everyone DIE",
+        await client.send_message(random.choice(["@everyone DIE",
                                              "@everyone Do you agree Jack has a penis so small you can't see it?",
                                              "@everyone Also, you have a bitch face so go fuck yourself!",
                                              "@everyone PAY 500 US DOLLARS OR NO COMPUTER AND CONSOLE FOR A YEAR",
