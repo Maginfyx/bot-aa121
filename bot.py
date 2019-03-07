@@ -9,7 +9,7 @@ roles = ["491676004004134912"]
 Client = discord.Client()
 client = commands.Bot(command_prefix="pp!")
 
-statusmsg = ['Cooking pizzas...','Checking pizzas...','Watching Pizza People...','Eating pizzas...','Selling pizzas...']
+status = ['Cooking pizzas...', 'Checking pizzas...', 'Watching Pizza People...', 'Eating pizzas...', 'Selling pizzas...']
 
 @client.event
 async def on_message(message):
@@ -30,10 +30,10 @@ async def on_message(message):
 
 async def change_status():
         await client.wait_until_ready()
-        messages = cycle(statusmsg)
+        msgs = cycle(status)
     
         while not client.is_closed:
-                current_status = next(messages)
+                current_status = next(msgs)
                 await client.change_presence(game=discord.Game(name=current_status))
                 await asyncio.sleep(2)
     
