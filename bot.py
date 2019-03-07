@@ -26,14 +26,14 @@ async def on_message(message):
         await client.send_message(message.channel, "Subscribe to Jack here: https://bit.ly/2H4woiP")
     if message.content.upper().startswith('PP!MEGAOOFSPAM'):
         await client.send_message(message.channel, random.choice(["@everyone DIE",
-                                             "@everyone Do you agree Jack has a penis so small you can't see it?",
-                                             "@everyone Also, you have a bitch face so go fuck yourself!",
-                                             "@everyone PAY 500 US DOLLARS OR NO COMPUTER AND CONSOLE FOR A YEAR",
-                                             "@everyone Ok please get out the fucking room I'm playing minecraft!",
-                                             "@everyone Mommy...PLEASE FUCKING LET ME MAKE THIS MINECRAFT MINEPLEX BEDWARS VIDEO!!1!11!",
-                                             "@everyone WHO WANTS ADMIN? SIMPLY GO TO PORNHUB.COM AND REDEEM YOUR PRIZE BY WATCHING 1,000 PORN VIDEOS! NO LOGIN INFO OR DOWNLOADS!",
-                                             "@everyone Nivea Soft Cream...More Like Nivea Soft Dick",
-                                             "@everyone Jack is a cunt lmao"]))  
+                                                                  "@everyone Do you agree Jack has a penis so small you can't see it?",
+                                                                  "@everyone Also, you have a bitch face so go fuck yourself!",
+                                                                  "@everyone PAY 500 US DOLLARS OR NO COMPUTER AND CONSOLE FOR A YEAR",
+                                                                  "@everyone Ok please get out the fucking room I'm playing minecraft!",
+                                                                  "@everyone Mommy...PLEASE FUCKING LET ME MAKE THIS MINECRAFT MINEPLEX BEDWARS VIDEO!!1!11!",
+                                                                  "@everyone WHO WANTS ADMIN? SIMPLY GO TO PORNHUB.COM AND REDEEM YOUR PRIZE BY WATCHING 1,000 PORN VIDEOS! NO LOGIN INFO OR DOWNLOADS!",
+                                                                  "@everyone Nivea Soft Cream...More Like Nivea Soft Dick",
+                                                                  "@everyone Jack is a cunt lmao"]))  
 
 @client.event
 async def on_ready():
