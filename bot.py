@@ -6,7 +6,6 @@ import time
 import os
 roles = ["491676004004134912"]
 
-Client = discord.Client()
 client = commands.Bot(command_prefix="pp!")
 
 @client.event
