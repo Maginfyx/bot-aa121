@@ -32,7 +32,7 @@ async def change_status():
         await client.wait_until_ready()
         messages = cycle(statusmsg)
     
-        while no client.is_closed:
+        while not client.is_closed:
                 current_status = next(messages)
                 await client.change_presence(game=discord.Game(name=current_status))
                 await asyncio.sleep(2)
