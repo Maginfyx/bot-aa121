@@ -29,7 +29,7 @@ async def on_message(message):
     
 
 async def change_status():
-        await client.wait until ready()
+        await client.wait_until_ready()
         messages = cycle(statusmsg)
     
         while no client.is_closed:
