@@ -9,8 +9,6 @@ roles = ["491676004004134912"]
 Client = discord.Client()
 client = commands.Bot(command_prefix="pp!")
 
-status = ['Cooking pizzas...', 'Checking pizzas...', 'Watching Pizza People...', 'Eating pizzas...', 'Selling pizzas...']
-
 @client.event
 async def on_message(message):
     if message.content.upper().startswith('PP!INFO'):
@@ -28,17 +26,11 @@ async def on_message(message):
         await client.send_message(message.channel, "Subscribe to Jack here: https://bit.ly/2H4woiP")
     
 
-async def change_status():
-        await client.wait_until_ready()
-        msgs = cycle(status)
+@client.event
+async def on_ready():
+await client.change_presence(game=discord.Game(name="Cooking Pizzas!"))
     
-        while not client.is_closed:
-                current_status = next(msgs)
-                await client.change_presence(game=discord.Game(name=current_status))
-                await asyncio.sleep(2)
-    
-   
-client.loop.create_task(change_status())    
+     
 client.run(str(os.environ.get('bottoken')))
 
  
