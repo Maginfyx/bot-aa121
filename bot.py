@@ -9,6 +9,8 @@ roles = ["491676004004134912"]
 Client = discord.Client()
 client = commands.Bot(command_prefix="pp!")
 
+statusmsg = ['Cooking pizzas...','Checking pizzas...','Watching Pizza People...','Eating pizzas...','Selling pizzas...']
+
 @client.event
 async def on_message(message):
     if message.content.upper().startswith('PP!INFO'):
@@ -24,22 +26,19 @@ async def on_message(message):
     if message.content.upper().startswith('PP!SUBJACK'):
         userID = message.author.id
         await client.send_message(message.channel, "Subscribe to Jack here: https://bit.ly/2H4woiP")
-    if message.content.upper().startswith('PP!MEGAOOFSPAM'):
-        await client.send_message(message.channel, random.choice(["@everyone DIE",
-                                                                  "@everyone Do you agree Jack has a penis so small you can't see it?",
-                                                                  "@everyone Also, you have a bitch face so go fuck yourself!",
-                                                                  "@everyone PAY 500 US DOLLARS OR NO COMPUTER AND CONSOLE FOR A YEAR",
-                                                                  "@everyone Ok please get out the fucking room I'm playing minecraft!",
-                                                                  "@everyone Mommy...PLEASE FUCKING LET ME MAKE THIS MINECRAFT MINEPLEX BEDWARS VIDEO!!1!11!",
-                                                                  "@everyone WHO WANTS ADMIN? SIMPLY GO TO PORNHUB.COM AND REDEEM YOUR PRIZE BY WATCHING 1,000 PORN VIDEOS! NO LOGIN INFO OR DOWNLOADS!",
-                                                                  "@everyone Nivea Soft Cream...More Like Nivea Soft Dick",
-                                                                  "@everyone Jack is a cunt lmao"]))  
+    
 
-@client.event
-async def on_ready():
-    await client.change_presence(game=discord.Game(name="Cooking Pizzas!"))
+async def change_status():
+        await client.wait until ready()
+        messages = cycle(statusmsg)
+    
+        while no client.is_closed:
+                current_status = next(messages)
+                await client.change_presence(game=discord.Game(name=current_status))
+                await asyncio.sleep(2)
     
    
-    
+client.loop.create_task(change_status())    
 client.run(str(os.environ.get('bottoken')))
+
  
