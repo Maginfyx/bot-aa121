@@ -21,6 +21,8 @@ async def on_message(message):
         userID = message.author.id
         await client.send_message(message.channel, "<@%s> **Bot Commands**" % (userID))
         await client.send_message(message.channel, "help, say, info, subjack")
+        await client.send_message(message.channel, "The current bot version is:")
+        await client.send_message(message.channel(name=version))
     if message.content.upper().startswith('PP!SUBJACK'):
         userID = message.author.id
         await client.send_message(message.channel, "Subscribe to Jack here: https://bit.ly/2H4woiP")
