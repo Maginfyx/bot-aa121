@@ -5,6 +5,7 @@ import asyncio
 import time
 import os
 roles = ["491676004004134912"]
+version = "0.0.1"
 
 client = commands.Bot(command_prefix="pp!")
 
@@ -27,9 +28,8 @@ async def on_message(message):
 
 @client.event
 async def on_ready():
-    await client.change_presence(game=discord.Game(name="Cooking Pizzas!"))
+    await client.change_presence(game=discord.Game(name=version))
     
      
 client.run(str(os.environ.get('bottoken')))
 
- 
