@@ -28,9 +28,6 @@ async def on_message(message):
         await client.send_message(message.channel, "Subscribe to Jack here: https://bit.ly/2H4woiP")
     
 
-@client.event
-async def on_ready():
-    await client.change_presence(game=discord.Game(name=version))
     
      
 client.run(str(os.environ.get('bottoken')))
