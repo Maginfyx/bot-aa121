@@ -30,5 +30,5 @@ async def on_message(message):
 
     
      
-client.run(os.getenv('bottoken'))
+client.run(os.environ('bottoken'))
 
